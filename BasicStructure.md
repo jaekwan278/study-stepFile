@@ -2,10 +2,10 @@
 ### 파일 구조 이해
 
 ---
->순서
->1. 필수 구성 요소
->2. HEADER SECTION
->3. DATA SECTION
+## 순서
+1. 필수 구성 요소
+2. HEADER SECTION
+3. DATA SECTION
 ---
 
 
@@ -66,6 +66,7 @@ ENDSEC;
   - 인스턴스 이름은 속성 값이나 집계 멤버를 통해 다른 엔티티의 인스턴스를 참조하는데에도 사용된다, 참조된 인스턴스는 현재 인스턴스의 앞이나 뒤에 정의될 수 있다.
 
 ---
-> <a> https://en.wikipedia.org/wiki/ISO_10303-21
-> <a> https://www.steptools.com/stds/step/IS_final_p21e3.html
-> <a> https://www.loc.gov/preservation/digital/formats/fdd/fdd000448.shtml
+<a> https://en.wikipedia.org/wiki/ISO_10303-21  
+<a> https://www.steptools.com/stds/step/IS_final_p21e3.html  
+<a> https://www.loc.gov/preservation/digital/formats/fdd/fdd000448.shtml  
+
