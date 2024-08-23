@@ -1,13 +1,11 @@
 # make-stepFile
 ### 파일 구조 이해
-
 ---
 ## 순서
 1. 필수 구성 요소
 2. HEADER SECTION
 3. DATA SECTION
----
-
+---  
 
 ## 필수 구성 요소
 ```
@@ -18,7 +16,6 @@ DATA; >> 데이터 섹션
 ENDSEC;
 END-ISO-10303-21; >> 파일 종료 선언
 ```
-
 
 ## HEADER SECTION
 - 데이터 필드 time_stamp 그리고 FILE_SCHEMA 를 제외한 모든 필드에는 빈 문자열이 포함될 수 있음.
@@ -40,7 +37,6 @@ FILE_NAME(
 FILE_SCHEMA (('AUTOMOTIVE_DESIGN { 1 0 10303 214 2 1 1}')); >> DATA section 의 정보를 제어하는 하나 이상의 Express 스키마
 ENDSEC;
 ```
-
 
 ## DATA SECTION
 ```
