@@ -1,0 +1,32 @@
+ISO-10303-21;
+
+HEADER;
+FILE_DESCRIPTION(('STEP AP203'), '1');
+FILE_NAME('makeSimpleSquare', '2024-08-24T12:00:00', ('jaekwan'), '', ', '', '');
+FILE_SCHEMA(('CONFIG_CONTROL_DESIGN'));
+ENDSEC;
+
+DATA;
+#1 = CARTESIAN_POINT('', (0.0, 0.0, 0.0));  // 첫 번째 점 (0,0,0)
+#2 = CARTESIAN_POINT('', (10.0, 0.0, 0.0)); // 두 번째 점 (10,0,0)
+#3 = CARTESIAN_POINT('', (10.0, 10.0, 0.0)); // 세 번째 점 (10,10,0)
+#4 = CARTESIAN_POINT('', (0.0, 10.0, 0.0)); // 네 번째 점 (0,10,0)
+
+#5 = POLYLINE('', (#1, #2, #3, #4, #1)); // 4개의 점을 연결하여 사각형을 형성
+
+#6 = CLOSED_SHELL('', (#5)); // 폐곡선으로 닫힌 셀을 정의
+
+#7 = ADVANCED_FACE('', (#6), #8, .F.); // 폐곡선을 가진 면을 정의
+
+#8 = PLANE('', #9); // 면이 위치할 평면 정의
+
+#9 = AXIS2_PLACEMENT_3D('', #1, #10, #11); // 평면의 위치와 방향 정의
+#10 = DIRECTION('', (0.0, 0.0, 1.0)); // 평면의 법선 방향
+#11 = DIRECTION('', (1.0, 0.0, 0.0)); // 평면의 X축 방향
+ENDSEC;
+
+END ISO_10303-21;
+
+/* FILE_DESCRIPTION 첫번재 인자 와 FILE_SCHEMA 에 허용된 값은 파일 내의 데이터 모델이 어떤 표준을 따르고 있는지를 정의한다.
+* ex >> STEP AP203 : CONFIG_CONTROL_DESIGN = 기계 설계 데이터 교환을 위한 표준.
+*/
