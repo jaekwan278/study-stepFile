@@ -1,0 +1,47 @@
+ISO-10303-21;
+
+HEADER;
+FILE_DESCRIPTION(('STEP AP203'), '1');
+FILE_NAME('makeSimpleCube', '2024-08-24T12:00:00', ('jaekwan'), '', ', '', '');
+FILE_SCHEMA(('CONFIG_CONTROL_DESIGN'));
+ENDSEC;
+
+DATA;
+#101 = CARTESIAN_POINT('', (0.0, 0.0, 0.0));
+#102 = CARTESIAN_POINT('', (2.0, 0.0, 0.0));
+#103 = CARTESIAN_POINT('', (2.0, 1.0, 0.0));
+#104 = CARTESIAN_POINT('', (0.0, 1.0, 0.0));
+#105 = CARTESIAN_POINT('', (0.0, 0.0, 3.0));
+#106 = CARTESIAN_POINT('', (2.0, 0.0, 3.0));
+#107 = CARTESIAN_POINT('', (2.0, 1.0, 3.0));
+#108 = CARTESIAN_POINT('', (0.0, 1.0, 3.0));
+
+
+#109 = POLYLINE('', (#101, #102, #103, #104, #101));
+#110 = POLYLINE('', (#105, #106, #107, #108, #105));
+#111 = POLYLINE('', (#101, #102, #106, #105, #101));
+#112 = POLYLINE('', (#102, #103, #107, #106, #102));
+#113 = POLYLINE('', (#103, #104, #108, #107, #103));
+#114 = POLYLINE('', (#104, #101, #108, #107, #104));
+
+#115 = FACE_OUTER_BOUND('', #109, .T.);
+#116 = FACE_OUTER_BOUND('', #110, .T.);
+#117 = FACE_OUTER_BOUND('', #111, .T.);
+#118 = FACE_OUTER_BOUND('', #112, .T.);
+#119 = FACE_OUTER_BOUND('', #113, .T.);
+#120 = FACE_OUTER_BOUND('', #114, .T.);
+
+#121 = ADVANCED_FACE('', #115, .T.);
+#122 = ADVANCED_FACE('', #116, .T.);
+#123 = ADVANCED_FACE('', #117, .T.);
+#124 = ADVANCED_FACE('', #118, .T.);
+#125 = ADVANCED_FACE('', #119, .T.);
+#126 = ADVANCED_FACE('', #120, .T.);
+
+#127 = CLOSED_SHELL('', (#121, #122, #123, #124, #125, #126));
+
+#128 = MANIFOLD_SOLID_BREP('', #127);
+
+ENDSEC;
+
+END ISO_10303-21;
